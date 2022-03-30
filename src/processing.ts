@@ -32,8 +32,8 @@ const getSummary = (passed: boolean, expected: Inputs.Tolerance, result: Inputs.
 };
 
 export const processDiff = (old: string, newPath: string, mode: Inputs.Mode, expected: Inputs.Tolerance): Result => {
-  const oldContent = fs.readFileSync(old, 'utf-8');
-  const newContent = fs.readFileSync(newPath, 'utf-8');
+  const oldContent = fs.existsSync(old) ? fs.readFileSync(old, 'utf-8') : '';
+  const newContent = fs.existsSync(newPath) ? fs.readFileSync(newPath, 'utf-8') : '';
   const diff = diffLines(oldContent, newContent);
 
   const counts = {

@@ -233,3 +233,25 @@ jobs:
         title: Fails
         notify_issue: true
         notify_check: true
+
+  test_no_old_file:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./
+      with:
+        old: fixtures/no_file.txt
+        new: fixtures/file1_basic.txt
+        mode: addition
+        tolerance: mixed-worse
+
+  test_no_new_file:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./
+      with:
+        old: fixtures/file1_basic.txt
+        new: fixtures/no_file.txt
+        mode: addition
+        tolerance: mixed-worse
