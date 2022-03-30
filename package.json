@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint '**/*.js' '**/*.ts'",
-    "pack": "ncc build -m",
+    "pack": "npm run build && ncc build -m",
     "format": "prettier --write '**/*.js' '**/*.ts'",
     "all": "npm run build && npm run lint && npm run pack"
   },
