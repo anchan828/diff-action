@@ -1,4 +1,4 @@
-# GitHub Actions: `diff-action` ![build-test](https://github.com/LouisBrunner/diff-action/workflows/build-test/badge.svg)
+# GitHub Actions: `diff-action` ![build-test](https://github.com/anchan828/diff-action/workflows/build-test/badge.svg)
 
 This GitHub Action allows you to compare two files based on a tolerance, output the result to a file and send various notifications (comment on a linked GitHub issue/pull request, create a [Check Run](https://developer.github.com/v3/checks/runs/#create-a-check-run), ...), etc.
 
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: LouisBrunner/diff-action@v0.1.0
+    - uses: anchan828/diff-action@v0.1.0
       with:
         old: file1.txt
         new: file2.txt
@@ -24,7 +24,7 @@ jobs:
         output: out.txt
 ```
 
-See the [examples workflow](.github/workflows/examples.yml) for more details and examples (and see the [associated runs](https://github.com/LouisBrunner/diff-action/actions?query=workflow%3Aexamples) to see how it will look like).
+See the [examples workflow](.github/workflows/examples.yml) for more details and examples (and see the [associated runs](https://github.com/anchan828/diff-action/actions?query=workflow%3Aexamples) to see how it will look like).
 
 ## Inputs
 
