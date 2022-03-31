@@ -34,7 +34,7 @@ async function run(): Promise<void> {
 
     core.debug(`Checking tolerance`);
     if (!result.passed) {
-      core.setFailed(result.summary);
+      core.warning(result.summary);
     }
     core.info(result.summary);
     core.info('===');
