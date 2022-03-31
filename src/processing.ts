@@ -5,6 +5,7 @@ import fs from 'fs';
 export type Result = {
   result: Inputs.Tolerance;
   passed: boolean;
+  changed: boolean;
   summary: string;
   output: string;
 };
@@ -65,9 +66,11 @@ export const processDiff = (old: string, newPath: string, mode: Inputs.Mode, exp
     result = mode == Inputs.Mode.Addition ? Inputs.Tolerance.MixedBetter : Inputs.Tolerance.MixedWorse;
   }
   const passed = compareTolerance(expected, result);
+  const changed = counts.removed !== 0 || counts.added !== 0;
   return {
     result,
     passed,
+    changed,
     summary: getSummary(passed, expected, result),
     output: createTwoFilesPatch(old, newPath, oldContent, newContent),
   };

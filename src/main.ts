@@ -42,6 +42,7 @@ async function run(): Promise<void> {
 
     core.debug(`Setting outputs`);
     core.setOutput('passed', result.passed ? 'true' : 'false');
+    core.setOutput(`changed`, result.changed ? 'true' : 'false');
     core.setOutput('output', result.output);
 
     if (inputs.output) {

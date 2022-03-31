@@ -74,6 +74,10 @@ Contains a boolean (`'true'` or `'false'`) representing if the check passed or n
 
 Contains the output of the diff
 
+### `changed`
+
+Contains a boolean value (`'true'` or `'false'`) representing if diff is present.
+
 ## Issues
 
  - Add a mode for the tolerance so `addition` can be better than `deletion` (which isn't possible now)
