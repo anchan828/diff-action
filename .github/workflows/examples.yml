@@ -266,8 +266,6 @@ jobs:
         old: fixtures/file1_basic.txt
         new: fixtures/file2_deleted.txt
         mode: addition
-        token: ${{ secrets.GITHUB_TOKEN }}
-        title: Works
-        notify_check: true
+    - run: echo '${{toJSON(steps.test_output_changed.outputs)}}'
     - if:  ${{ steps.test_output_changed.outputs.changed == 'true' }} 
       run: echo 'call'
