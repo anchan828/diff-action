@@ -38,6 +38,8 @@ outputs:
     description: 'boolean describing if the test passed or not'
   output:
     description: 'text of the diff'
+  changed:
+    description: 'boolean describing if diff is present'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
